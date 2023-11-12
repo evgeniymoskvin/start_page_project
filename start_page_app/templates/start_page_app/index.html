@@ -6,87 +6,33 @@
 {% endblock %}
 
 {% block body %}
+    <div class="centered_div">
+        <div class="center_menu">
+            <div style="height: 70px; margin-bottom: 75px">
+                <img src="{% static 'start_page_app/icons/logo.png' %}" style="height: 100%">
+            </div>
 
-
-    <div class="centered_div" style="margin-top: 100px">
-        <div style="height: 100px">
-            <img src="{% static 'start_page_app/icons/logo.png' %}" style="height: 100%">
+            <div class="list-emp">
+                {% for link in links %}
+                    <div class="element_full" onclick="location.href='{{ link.link }}'">
+                        <div class="element_content">
+                            <img src="{{ link.image.url }}">
+                            <span>{{ link.name }} </span>
+                        </div>
+                    </div>
+                {% endfor %}
+                {% for i in none_list %}
+                    <div class="element_full">
+                        <div class="element_content">
+                            <img src="{% static 'start_page_app/icons/border-none-svgrepo-com.svg' %}">
+                            <span>--DDD-- </span>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
         </div>
-        <section id="sec">
-            <ul style="margin-top: 50px">
-                <li onclick="drozdLink()">
-                    <div class="flex">
-                        <img src="{% static 'start_page_app/icons/bird-svgrepo-com.svg' %}" style="height: 80px">
-                        <p>Дрозд </p>
-                    </div>
-                </li>
-                <li onclick="vacLink()">
-                    <div class="flex">
-                        <img src="{% static 'start_page_app/icons/yacht-svgrepo-com.svg' %}" style="height: 80px">
-                        <p>Отпуска </p>
-                    </div>
-                </li>
-                <li>
-                    <div class="flex">
-                        <img src="{% static 'start_page_app/icons/notebook-svgrepo-com.svg' %}" style="height: 80px">
-                        <p>Справочник </p>
-                    </div>
-                </li>
-                <li>
-                    <div class="flex">
-                        <img src="{% static 'start_page_app/icons/border-none-svgrepo-com.svg' %}" style="width: 50%">
-                        <p>--ddd-- </p>
-                    </div>
-                </li>
-                <li>
-                    <div class="flex">
-                        <img src="{% static 'start_page_app/icons/border-none-svgrepo-com.svg' %}" style="width: 50%">
-                        <p>--ddd-- </p>
-                    </div>
-                </li>
-                <li>
-                    <div class="flex">
-                        <img src="{% static 'start_page_app/icons/border-none-svgrepo-com.svg' %}" style="width: 50%">
-                        <p>--ddd-- </p>
-                    </div>
-                </li>
-                <li>
-                    <div class="flex">
-                        <img src="{% static 'start_page_app/icons/border-none-svgrepo-com.svg' %}" style="width: 50%">
-                        <p>--ddd-- </p>
-                    </div>
-                </li>
-                <li>
-                    <div class="flex">
-                        <img src="{% static 'start_page_app/icons/border-none-svgrepo-com.svg' %}" style="width: 50%">
-                        <p>--ddd-- </p>
-                    </div>
-                </li>
-                <li>
-                    <div class="flex">
-                        <img src="{% static 'start_page_app/icons/border-none-svgrepo-com.svg' %}" style="width: 50%">
-                        <p>--ddd-- </p>
-                    </div>
-                </li>
-            </ul>
-        </section>
-
     </div>
 
-    <script>
-
-        function drozdLink() {
-            var url_drozd = 'http://drozd.' + window.location.hostname
-            console.log(url_drozd);
-            location.href = url_drozd;
-        }
-
-        function vacLink() {
-            var url_drozd = 'http://vac.' + window.location.hostname
-            console.log(url_drozd);
-            location.href = url_drozd;
-        }
-    </script>
 
 {% endblock %}
 
