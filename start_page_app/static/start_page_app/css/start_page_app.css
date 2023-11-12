@@ -42,7 +42,7 @@ url('../fonts/golos/400/font.ttf') format('ttf');
     margin-top: 50px;
     align-items: center;
     text-align: center;
-    min-height: 100vh;
+    min-height: calc(100vh - 50px);
     /*background-color: #0a53be;*/
 }
 
